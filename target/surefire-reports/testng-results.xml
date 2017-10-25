@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<div "featureFile">Feature File: src&#x2F;test&#x2F;resources&#x2F;features&#x2F;cafeTownsend.feature</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "feature">Feature: CafeTown Create, Update and Delete customers</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "scenario">Scenario: basic validations</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Given  I am on CafeTownSend Login page using browser (passed : 5s)</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Then  Login to the CafeTownSend application using Valid credentials (passed : 6s)</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Then  create customers (passed : 13s)</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Then  edit customers (passed : 13s)</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Then  delete customers (passed : 6s)</div>]]>
+    </line>
+  </reporter-output>
+  <suite name="Test runner" duration-ms="52377" started-at="2017-10-25T12:11:09Z" finished-at="2017-10-25T12:12:01Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.run_cukes()[pri:0, instance:runners.TestRunner@5dfcfece]" name="run_cukes" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Self Employed Portal" duration-ms="52377" started-at="2017-10-25T12:11:09Z" finished-at="2017-10-25T12:12:01Z">
+      <class name="runners.TestRunner">
+        <test-method status="PASS" signature="run_cukes()[pri:0, instance:runners.TestRunner@5dfcfece]" name="run_cukes" duration-ms="52369" started-at="2017-10-25T23:11:09Z" description="Runs Cucumber Features" finished-at="2017-10-25T23:12:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<div "featureFile">Feature File: src&#x2F;test&#x2F;resources&#x2F;features&#x2F;cafeTownsend.feature</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "feature">Feature: CafeTown Create, Update and Delete customers</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "scenario">Scenario: basic validations</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Given  I am on CafeTownSend Login page using browser (passed : 5s)</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Then  Login to the CafeTownSend application using Valid credentials (passed : 6s)</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Then  create customers (passed : 13s)</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Then  edit customers (passed : 13s)</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Then  delete customers (passed : 6s)</div>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- run_cukes -->
+      </class> <!-- runners.TestRunner -->
+    </test> <!-- Self Employed Portal -->
+  </suite> <!-- Test runner -->
+</testng-results>

@@ -1,0 +1,105 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "basic validations",
+        "description": "",
+        "id": "cafetown-create,-update-and-delete-customers;basic-validations",
+        "after": [
+          {
+            "result": {
+              "duration": 5247730138,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepdefs.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5937779054,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am on CafeTownSend Login page using browser",
+            "match": {
+              "location": "MyStepdefs.iAmOnCafeTownSendLoginPageUsingBrowser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6919624724,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Login to the CafeTownSend application using Valid credentials",
+            "match": {
+              "location": "MyStepdefs.loginToTheCafeTownSendApplicationUsingValidCredentials()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13717783813,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "create customers",
+            "match": {
+              "location": "MyStepdefs.createCustomers()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13942132589,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "edit customers",
+            "match": {
+              "location": "MyStepdefs.editCustomers()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6373090712,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "delete customers",
+            "match": {
+              "location": "MyStepdefs.deleteCustomers()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@CafeTownSend_Scenario_One"
+          }
+        ]
+      }
+    ],
+    "name": "CafeTown Create, Update and Delete customers",
+    "description": "",
+    "id": "cafetown-create,-update-and-delete-customers",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/cafeTownsend.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@CafeTownSend"
+      }
+    ]
+  }
+]

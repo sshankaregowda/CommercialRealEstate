@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.applitools:eyes-selenium-java3:3.23">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/applitools/eyes-selenium-java3/3.23/eyes-selenium-java3-3.23.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/applitools/eyes-selenium-java3/3.23/eyes-selenium-java3-3.23-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/applitools/eyes-selenium-java3/3.23/eyes-selenium-java3-3.23-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,6 +1,7 @@
 package glue;
 
 //import cucumber.api.PendingException;
+import cucumber.api.PendingException;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -15,60 +16,55 @@ public class MyStepdefs extends ParentScenario {
         closeBrowser(scenario);
     }
 
-    @Given("^I am on XPlan home page using browser$")
-    public void iAmOnXPlanHomePageUsingBrowser() throws Throwable {
+    @Given("^I am on CafeTownSend Login page using browser$")
+    public void iAmOnCafeTownSendLoginPageUsingBrowser() throws Throwable {
+        startBrowser("Initializing Execution", "operating system");
 
-        startBrowser("Initializing Execution");
+        String browserType = dataDrivenPage.driveData("scenarioOne", "BROWSER_TYPE");
+        String osType = dataDrivenPage.driveData("scenarioOne", "OS_TYPE");
+        String applicationURL = dataDrivenPage.driveData("scenarioOne", "URL");
 
-        String browserType = dataDrivenPage.driveData("login", "BROWSER_TYPE");
-        String applicationURL = dataDrivenPage.driveData("login", "URL");
-
-        startBrowser(browserType);
+        startBrowser(browserType, osType);
         navigateTo(applicationURL);
     }
 
-    @Then("^Login to the XPlan application using Valid credentials$")
-    public void loginToTheXPlanApplicationUsingValidCredentials() throws Throwable {
-        String username = dataDrivenPage.driveData("login", "Username");
-        String password = dataDrivenPage.driveData("login", "Password");
+    @Then("^Login to the CafeTownSend application using Valid credentials$")
+    public void loginToTheCafeTownSendApplicationUsingValidCredentials() throws Throwable {
 
-        xplanloginpage.logonXplan(username, password);
-        xplanloginpage.duplicateLoginMessage(password);
+        String userName = dataDrivenPage.driveData("scenarioOne", "Username");
+        String password = dataDrivenPage.driveData("scenarioOne", "Password");
+
+        loginpage.logon(userName,password);
     }
 
-    @And("^Search for client ID Individual for which podium already passed the data$")
-    public void searchForClientIDIndividualForWhichPodiumAlreadyPassedTheData() throws Throwable {
-        String ClientID = dataDrivenPage.driveData("Individual", "ClientID");
+    @Then("^create customers$")
+    public void createCustomers() throws Throwable {
+        String firstName = dataDrivenPage.driveData("scenarioOne", "firstName");
+        String lastName = dataDrivenPage.driveData("scenarioOne", "lastName");
+        String startDate = dataDrivenPage.driveData("scenarioOne", "startDate");
+        String email = dataDrivenPage.driveData("scenarioOne", "email");
 
-        xplanHomepage.topSearchBox(ClientID);
+        Thread.sleep(2000);
+        homePage.create();
+        createPage.keyInCreateDetails(firstName, lastName, startDate, email);
     }
 
-    @And("^Search for client ID Company for which podium already passed the data$")
-    public void searchForClientIDCompanyForWhichPodiumAlreadyPassedTheData() throws Throwable {
-        String ClientID = dataDrivenPage.driveData("Company", "ClientID");
-
-        xplanHomepage.topSearchBox(ClientID);
+    @Then("^edit customers$")
+    public void editCustomers() throws Throwable {
+        String firstName = dataDrivenPage.driveData("scenarioTwo", "firstName");
+        String lastName = dataDrivenPage.driveData("scenarioTwo", "lastName");
+        String startDate = dataDrivenPage.driveData("scenarioTwo", "startDate");
+        String email = dataDrivenPage.driveData("scenarioTwo", "email");
+        Thread.sleep(2000);
+        editPage.selectClient();
+        homePage.edit();
+        editPage.keyInUpdateDetails(firstName, lastName, startDate, email);
     }
 
-    @And("^Search for client ID Trust for which podium already passed the data$")
-    public void searchForClientIDTrustForWhichPodiumAlreadyPassedTheData() throws Throwable {
-        String ClientID = dataDrivenPage.driveData("Trust", "ClientID");
-
-        xplanHomepage.topSearchBox(ClientID);
-    }
-
-    @And("^Select the ID from the search result$")
-    public void selectTheIDFromTheSearchResult() throws Throwable {
-        xplanHomepage.searchResult();
-    }
-
-    @And("^Click on Financial Details tab$")
-    public void clickOnFinancialDetailsTab() throws Throwable {
-        xplanClientMenuPage.financialDetails();
-    }
-
-    @And("^Click on Balance Sheet$")
-    public void clickOnBalanceSheet() throws Throwable {
-        xplanClientMenuPage.balanceSheet();
+    @Then("^delete customers$")
+    public void deleteCustomers() throws Throwable {
+        Thread.sleep(2000);
+        deletePage.selectClient();
+        deletePage.deleteCustomer();
     }
 }

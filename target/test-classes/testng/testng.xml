@@ -4,7 +4,7 @@
 
     <test name="Self Employed Portal"   >
          <classes>
-             <class name="runners.TestRunnerIndividual"/>
+             <class name="runners.TestRunner"/>
         </classes>
     </test>
 

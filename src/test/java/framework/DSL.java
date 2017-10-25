@@ -32,7 +32,7 @@ public abstract class DSL {
     public  String getData(String t_testcaseName,String t_field,int t_instance) throws Exception{
         try{
             int flag = 0;
-            CsvReader csvreaderobj = new CsvReader("C:\\ccviews\\XplanPodium\\src\\test\\resources\\inputDataSheet\\inputDataSheet.csv");
+            CsvReader csvreaderobj = new CsvReader(System.getProperty("user.dir")+"/src/test/resources/inputDataSheet/inputDataSheet.csv");
             csvreaderobj.readHeaders();
             while (csvreaderobj.readRecord())
             {
