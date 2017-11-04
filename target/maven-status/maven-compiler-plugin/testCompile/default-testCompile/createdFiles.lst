@@ -1,11 +1,6 @@
-pageObjects/LoginPage.class
 runners/TestRunner.class
 framework/ParentPage.class
 glue/MyStepdefs.class
-pageObjects/CreatePage.class
 framework/DSL.class
-pageObjects/DeletePage.class
 pageObjects/DataDrivenPage.class
-pageObjects/HomePage.class
-pageObjects/EditPage.class
 framework/ParentScenario.class

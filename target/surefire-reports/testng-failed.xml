@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" verbose="0" name="Failed suite [Test runner]" parallel="tests">
-  <test name="Self Employed Portal(failed)" parallel="tests">
+  <test name="Commercial Real Estate(failed)" parallel="tests">
     <classes>
       <class name="runners.TestRunner">
         <methods>
@@ -9,5 +9,5 @@
         </methods>
       </class> <!-- runners.TestRunner -->
     </classes>
-  </test> <!-- Self Employed Portal(failed) -->
+  </test> <!-- Commercial Real Estate(failed) -->
 </suite> <!-- Failed suite [Test runner] -->

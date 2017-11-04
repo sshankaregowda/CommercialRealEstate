@@ -28,11 +28,7 @@ public class ParentScenario {
     public final String EXEC_SELENIUM_GRID = "http://localhost:4444/wd/hub";
 
     protected DataDrivenPage dataDrivenPage;
-    protected LoginPage loginpage;
-    protected HomePage homePage;
-    protected CreatePage createPage;
-    protected DeletePage deletePage;
-    protected EditPage editPage;
+    protected CommercialRealEstateHomePage commercialRealEstateHomePage;
 
 
     protected void startBrowser(String browsertype, String osType) throws Exception {
@@ -107,12 +103,9 @@ public class ParentScenario {
             Assert.fail("Browser Not Specified Properly");
         }
 
-        loginpage              = new LoginPage(driver);
+        commercialRealEstateHomePage              = new CommercialRealEstateHomePage(driver);
         dataDrivenPage         = new DataDrivenPage(driver);
-        homePage               = new HomePage(driver);
-        createPage             = new CreatePage(driver);
-        deletePage             = new DeletePage(driver);
-        editPage               = new EditPage(driver);
+
     }
 
     protected void navigateTo(String ApplicationURL) {

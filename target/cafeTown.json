@@ -4,13 +4,13 @@
     "elements": [
       {
         "line": 5,
-        "name": "basic validations",
+        "name": "Property, Business for Sale, Franchise Page verification",
         "description": "",
-        "id": "cafetown-create,-update-and-delete-customers;basic-validations",
+        "id": "navigate-and-verify-all-the-pages-have-been-successfully-loaded.;property,-business-for-sale,-franchise-page-verification",
         "after": [
           {
             "result": {
-              "duration": 5247730138,
+              "duration": 5311105921,
               "status": "passed"
             },
             "match": {
@@ -23,61 +23,49 @@
         "steps": [
           {
             "result": {
-              "duration": 5937779054,
+              "duration": 7134548726,
               "status": "passed"
             },
             "line": 6,
-            "name": "I am on CafeTownSend Login page using browser",
+            "name": "I am on Commericial Real Estate Home page using browser",
             "match": {
-              "location": "MyStepdefs.iAmOnCafeTownSendLoginPageUsingBrowser()"
+              "location": "MyStepdefs.iAmOnCommericialRealEstateHomePageUsingBrowser()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 6919624724,
+              "duration": 6215752207,
               "status": "passed"
             },
             "line": 7,
-            "name": "Login to the CafeTownSend application using Valid credentials",
+            "name": "Verify Property Page successfully loaded",
             "match": {
-              "location": "MyStepdefs.loginToTheCafeTownSendApplicationUsingValidCredentials()"
+              "location": "MyStepdefs.verifyPropertyPageSuccessfullyLoaded()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 13717783813,
+              "duration": 6120054221,
               "status": "passed"
             },
             "line": 8,
-            "name": "create customers",
+            "name": "Verify BusinessForSale Page successfully loaded",
             "match": {
-              "location": "MyStepdefs.createCustomers()"
+              "location": "MyStepdefs.verifyBusinessForSalePageSuccessfullyLoaded()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 13942132589,
+              "duration": 4631020296,
               "status": "passed"
             },
             "line": 9,
-            "name": "edit customers",
+            "name": "Verify Franchise Page successfully loaded",
             "match": {
-              "location": "MyStepdefs.editCustomers()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6373090712,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "delete customers",
-            "match": {
-              "location": "MyStepdefs.deleteCustomers()"
+              "location": "MyStepdefs.verifyFranchisePageSuccessfullyLoaded()"
             },
             "keyword": "Then "
           }
@@ -90,15 +78,15 @@
         ]
       }
     ],
-    "name": "CafeTown Create, Update and Delete customers",
+    "name": "navigate and verify all the pages have been successfully loaded.",
     "description": "",
-    "id": "cafetown-create,-update-and-delete-customers",
+    "id": "navigate-and-verify-all-the-pages-have-been-successfully-loaded.",
     "keyword": "Feature",
-    "uri": "src/test/resources/features/cafeTownsend.feature",
+    "uri": "src/test/resources/features/CommercialRealEstate.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@CafeTownSend"
+        "name": "@CommercialRealEstate"
       }
     ]
   }
