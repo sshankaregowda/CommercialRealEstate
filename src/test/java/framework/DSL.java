@@ -1,6 +1,7 @@
 package framework;
 
 import com.csvreader.CsvReader;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
@@ -18,17 +19,24 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-
+/*
+ * Filename      	   Created By       Date
+ * DSL.java            Shruthi          05/11/2017
+ *
+ * Java class containing methods for obtaining data from csv sheet and all basic functions on web page
+ */
 public abstract class DSL {
 
     private WebDriver driver;
     static Dictionary dict = new Hashtable();
     static Dictionary dicttoread = new Hashtable();
 
+
     public DSL(WebDriver driver) {
         this.driver = driver;
     }
 
+    //method to obtain data from csv file
     public  String getData(String t_testcaseName,String t_field,int t_instance) throws Exception{
         try{
             int flag = 0;
@@ -46,7 +54,6 @@ public abstract class DSL {
                         String p_field = csvreaderobj.get("Field"+i).trim();
                         String p_objproperty = csvreaderobj.get("Value"+i).trim();
                         dicttoread.put(p_field, p_objproperty);
-                        //System.out.println("Field: "+p_field+ " Value: "+dicttoread.get(p_field));
                     }
                     flag = 0;
                     break;
@@ -69,7 +76,7 @@ public abstract class DSL {
         return (String) dicttoread.get(t_field);
     }
 
-
+    //method to wait until element is loaded for different interval of time
     public WebElement fluentWait(By locator, int time) throws Exception {
 
         WebElement r_currentElement = null;
@@ -90,12 +97,12 @@ public abstract class DSL {
         return r_currentElement;
     }
 
-
+    //method to halt the thread
     public void fluentWait(int TIME) throws Exception {
         Thread.sleep(TIME);
     }
 
-
+    //method to click the element
     public void clickElement(By by, String elementName) throws Exception {
 
         WebElement element = fluentWait(by, 20);
@@ -107,6 +114,7 @@ public abstract class DSL {
         }
     }
 
+    //method to click the link
     public void clickLink(By by, String elementName) throws Exception {
 
         WebElement element = fluentWait(by, 20);
@@ -118,6 +126,7 @@ public abstract class DSL {
         }
     }
 
+    //method to move to the particular element
     public void actionBuilder(By by, String elementName)throws Exception{
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -130,11 +139,13 @@ public abstract class DSL {
 
     String mainWindow;
 
+    //method which returns the window handle
     public void getMainWindowHandle() {
         mainWindow = driver.getWindowHandle();
         System.out.println(mainWindow);
     }
 
+    //method which returns the set of window handles
     public void getChildWindowHandleAndSwitch() {
         Set<String> myWindowHandles = driver.getWindowHandles();
 
@@ -147,10 +158,12 @@ public abstract class DSL {
         }
     }
 
+    //method to switch to the parent window
     public void switchToParentWindow() {
         driver.switchTo().window(mainWindow);
     }
 
+    //method to click element using java script executor
     public void javascriptClick(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -161,7 +174,7 @@ public abstract class DSL {
         }
     }
 
-
+    //method to clear the textbox
     public void clearTextBox(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -171,11 +184,13 @@ public abstract class DSL {
         }
     }
 
+    //method to switch to frame
     public void SwitchToFrame(String frameName) throws Exception {
         Thread.sleep(5000);
         driver.switchTo().frame(frameName);
     }
 
+    //method to switch to frame without locator
     public void frameWithoutLocator(By by, String elementName) throws Exception {
         WebElement Frame = fluentWait(by, 20);
         if (Frame == null) {
@@ -186,11 +201,13 @@ public abstract class DSL {
         }
     }
 
+    //method to switch to default content
     public void SwitchTodefaultContent() throws Exception {
         Thread.sleep(3000);
         driver.switchTo().defaultContent();
     }
 
+    //method to obtain the text
     public String elementGetText(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         String webElementText;
@@ -202,6 +219,7 @@ public abstract class DSL {
         return webElementText;
     }
 
+    //method to obtain the get text by ignoring failure
     public String elementGetTextIgnoreFailure(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         String webElementText;
@@ -214,7 +232,7 @@ public abstract class DSL {
     }
 
 
-
+    //method to press ENTER
     public void keyboardEnter(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -225,7 +243,7 @@ public abstract class DSL {
         }
     }
 
-
+    //method to press SEMICOLON
     public void keyboardSemiColon(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -236,6 +254,7 @@ public abstract class DSL {
         }
     }
 
+    //method to make Key DOWN
     public void keyboardDown(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -246,6 +265,7 @@ public abstract class DSL {
         }
     }
 
+    //method to press TAB
     public void keyboardTab(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -256,6 +276,7 @@ public abstract class DSL {
         }
     }
 
+    //method to capture today date
     public String captureTodayDate() throws Exception {
         // Create object of SimpleDateFormat class and decide the format
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -269,6 +290,7 @@ public abstract class DSL {
         return todayDate;
     }
 
+    //method to get past date
     public String GetPastDate() throws Exception {
         String formatted = "";
         SimpleDateFormat simpleFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -290,6 +312,7 @@ public abstract class DSL {
         return formatted;
     }
 
+    //method to enter value
     public void enterValue(By by, String elementName, String text) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -302,6 +325,7 @@ public abstract class DSL {
         }
     }
 
+    //method to enter value without clear
     public void enterValueWithoutClear(By by, String elementName, String text) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -313,6 +337,7 @@ public abstract class DSL {
         }
     }
 
+    //method to clear the textbox
     public void textBoxClearClear(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -323,6 +348,7 @@ public abstract class DSL {
         }
     }
 
+    //method to check if element is displayed
     public boolean elementDisplayed(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -333,6 +359,7 @@ public abstract class DSL {
         return true;
     }
 
+    //method to check if element is dispalyed and it returns boolean value
     public boolean elementNotDisplayedPositiveScenario(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 10);
         if (element == null) {
@@ -343,21 +370,25 @@ public abstract class DSL {
         }
     }
 
+    //method to scroll down
     public void webPageScrollDown() throws Exception {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("scroll(0, 250);");
     }
 
+    //method to scroll up
     public void webPageScrollUp() throws Exception {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("scroll(0, -250);");
     }
 
+    //method to scroll till bottom
     public void webPageScrollBottom() throws Exception {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.clientHeight));");
     }
 
+    //method to select dropdown by visible text
     public void selectVisibleText(By by, String elementName, String visibleText) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -368,6 +399,7 @@ public abstract class DSL {
         }
     }
 
+    //method to send the visible text
     public void selectVisible(By by, String elementName, String visibleText) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -378,7 +410,7 @@ public abstract class DSL {
         }
     }
 
-
+    //method to select by value
     public void selectByValue(By by, String elementName, String value) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -390,25 +422,29 @@ public abstract class DSL {
     }
 
 
-
+    //method to switch to alert
     public void switchToAlert() {
         //driver.switchTo().alert();
         driver.switchTo().activeElement();
     }
 
+    //method to accept the alert
     public void acceptAlert() throws Exception {
         driver.switchTo().alert().accept();
     }
 
+    //method to check if it has elements or not
     public boolean hasElement(By by) {
 
         return !driver.findElements(by).isEmpty();
     }
 
+    //method to refresh page
     public void refreshPage() throws Exception {
         driver.navigate().refresh();
     }
 
+    //method to check if radio button is selected
     public boolean IsRadioButtonSelected(By by, String elementName) throws Exception {
         WebElement element = fluentWait(by, 20);
         boolean selectValue;
@@ -420,7 +456,7 @@ public abstract class DSL {
         return selectValue;
     }
 
-
+    //method to format the date
     public String generateRandomNumber() throws Exception {
         // Create an instance of SimpleDateFormat used for formatting
         // the string representation of date (month/day/year)
@@ -433,6 +469,7 @@ public abstract class DSL {
         return reportDate;
     }
 
+    //method to get future date
     public String GetFutureDate(int noOfdays) throws Exception {
         String formatted = "";
         SimpleDateFormat simpleFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -454,7 +491,7 @@ public abstract class DSL {
         return formatted;
     }
 
-
+    //method to select options for radio button
     public void selectOptionInputRadio(String strRadioGroupName, int option) throws Exception {
         List<WebElement> radios = driver.findElements(By.name(strRadioGroupName));
         if (option > 0 && option <= radios.size()) {
@@ -464,6 +501,7 @@ public abstract class DSL {
         }
     }
 
+    //method to switch to alert
     public boolean isAlertPresent() throws Exception {
         try {
             driver.switchTo().alert();
@@ -473,7 +511,7 @@ public abstract class DSL {
         }
     }
 
-
+    //method to compare text
     public void compareText(By by, String elementName, String TextToBeCompared) throws Exception {
         WebElement element = fluentWait(by, 20);
 
@@ -490,6 +528,7 @@ public abstract class DSL {
         }
     }
 
+    //method to compare selected dropdown text
     public void compareSelectedDropDownText(By by, String elementName, String TextToBeCompared) throws Exception {
         WebElement element = fluentWait(by, 20);
 
@@ -506,6 +545,7 @@ public abstract class DSL {
         }
     }
 
+    //method to iterate through table elements
     public int tableIterateClickCell(By by, String text) throws Exception {
         WebElement table = fluentWait(by, 20);
         WebElement previousCell = null;
@@ -530,7 +570,7 @@ public abstract class DSL {
         return flag;
     }
 
-
+    //method to iterate through table and compares the text
     public void  tableIterateVerifyText(By by, String text) throws Exception {
         WebElement table = fluentWait(by, 20);
         WebElement previousCell=null;
@@ -558,6 +598,7 @@ public abstract class DSL {
         }
     }
 
+    //method to clear the text box
     public void ClearTextBox(By by, String elementName,String text) throws Exception {
         WebElement element = fluentWait(by, 20);
         if (element == null) {
@@ -571,7 +612,7 @@ public abstract class DSL {
         }
     }
 
-
+    //method to set attribute
     public void setAttribute(By by, String elementName,String text) throws Exception {
         WebElement element = fluentWait(by, 20);
         if(element==null){
@@ -583,13 +624,14 @@ public abstract class DSL {
         }
     }
 
+    //method to set attribute
     public void setAttribute(WebElement element, String elementName,String text) throws Exception {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String scriptSetAttrValue = "arguments[0].setAttribute(arguments[1],arguments[2])";
         js.executeScript(scriptSetAttrValue, element, "value", text);
     }
 
-
+    //method to find elements
     public void findParticularElementFromList(By by, int index) throws Exception {
         List<WebElement>  elements=driver.findElements(by);
         WebElement  element=elements.get(index);
@@ -597,6 +639,7 @@ public abstract class DSL {
         js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", element);
     }
 
+    //method to iterate through table to check if it contains text
     public int  tableIterateVerifyTextReturnRow(By by, String text) throws Exception {
         WebElement table = fluentWait(by, 20);
         int rowCount=0;
@@ -627,6 +670,7 @@ public abstract class DSL {
         return  rowCount;
     }
 
+    //method to read notepad
     public String ReadNotepad(String PathOfFile) throws Exception{
         BufferedReader br = new BufferedReader(new FileReader(PathOfFile));
         try {
@@ -645,6 +689,7 @@ public abstract class DSL {
 
     }
 
+    //method to check if element has text
     public void ElementHasText(By by, String elementName, String textToCheck) throws Exception{
         WebElement element = fluentWait(by, 20);
 
@@ -661,7 +706,7 @@ public abstract class DSL {
 
     }
 
-
+    //method to check if element has any text
     public void ElementHasAnyText(By by, String elementName) throws Exception{
         WebElement element = fluentWait(by, 20);
 

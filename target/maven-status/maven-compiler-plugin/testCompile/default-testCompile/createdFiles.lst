@@ -1,6 +1,0 @@
-runners/TestRunner.class
-framework/ParentPage.class
-glue/MyStepdefs.class
-framework/DSL.class
-pageObjects/DataDrivenPage.class
-framework/ParentScenario.class

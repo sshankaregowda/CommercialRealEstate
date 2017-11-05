@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test runner" parallel="tests" thread-count="1">
+<suite name="Test runner" parallel="tests" thread-count="2">
 
     <test name="Commercial Real Estate"   >
          <classes>
              <class name="runners.TestRunner"/>
         </classes>
+
+    </test>
+
+    <test name="Commercial Real Estate1"   >
+        <classes>
+            <class name="runners.TestRunner1"/>
+        </classes>
+
     </test>
 
 </suite>

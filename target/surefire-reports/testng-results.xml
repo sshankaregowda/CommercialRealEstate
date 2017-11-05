@@ -5,54 +5,60 @@
       <![CDATA[<div "featureFile">Feature File: src&#x2F;test&#x2F;resources&#x2F;features&#x2F;CommercialRealEstate.feature</div>]]>
     </line>
     <line>
-      <![CDATA[<div "feature">Feature: navigate and verify all the pages have been successfully loaded.</div>]]>
+      <![CDATA[<div "feature">Feature: Click on CommercialRealEstate tabs and verify all the pages have been successfully loaded.</div>]]>
     </line>
     <line>
       <![CDATA[<div "scenario">Scenario: Property, Business for Sale, Franchise Page verification</div>]]>
     </line>
     <line>
-      <![CDATA[<div "result">Given  I am on Commericial Real Estate Home page using browser (passed : 7s)</div>]]>
+      <![CDATA[<div "result">Given  I am on Commercial Real Estate Home page (passed : 7s)</div>]]>
     </line>
     <line>
-      <![CDATA[<div "result">Then  Verify Property Page successfully loaded (passed : 6s)</div>]]>
+      <![CDATA[<div "result">Then  Verify Property Page successfully loaded (passed : 5s)</div>]]>
     </line>
     <line>
-      <![CDATA[<div "result">Then  Verify BusinessForSale Page successfully loaded (passed : 6s)</div>]]>
+      <![CDATA[<div "result">Then  Verify BusinessForSale Page successfully loaded (passed : 3s)</div>]]>
     </line>
     <line>
-      <![CDATA[<div "result">Then  Verify Franchise Page successfully loaded (passed : 4s)</div>]]>
+      <![CDATA[<div "result">Then  Verify Franchise Page successfully loaded (passed : 2s)</div>]]>
+    </line>
+    <line>
+      <![CDATA[<div "result">Then  Verify News Page successfully loaded (passed : 12s)</div>]]>
     </line>
   </reporter-output>
-  <suite name="Test runner" duration-ms="29673" started-at="2017-11-04T07:21:36Z" finished-at="2017-11-04T07:22:05Z">
+  <suite name="Test runner" duration-ms="36471" started-at="2017-11-05T10:30:39Z" finished-at="2017-11-05T10:31:15Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.run_cukes()[pri:0, instance:runners.TestRunner@5dfcfece]" name="run_cukes" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.run_cukes()[pri:0, instance:runners.TestRunner@5d5eef3d]" name="run_cukes" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Commercial Real Estate" duration-ms="29673" started-at="2017-11-04T07:21:36Z" finished-at="2017-11-04T07:22:05Z">
+    <test name="Commercial Real Estate" duration-ms="36471" started-at="2017-11-05T10:30:39Z" finished-at="2017-11-05T10:31:15Z">
       <class name="runners.TestRunner">
-        <test-method status="PASS" signature="run_cukes()[pri:0, instance:runners.TestRunner@5dfcfece]" name="run_cukes" duration-ms="29663" started-at="2017-11-04T18:21:36Z" description="Runs Cucumber Features" finished-at="2017-11-04T18:22:05Z">
+        <test-method status="PASS" signature="run_cukes()[pri:0, instance:runners.TestRunner@5d5eef3d]" name="run_cukes" duration-ms="36462" started-at="2017-11-05T21:30:39Z" description="Runs Cucumber Features" finished-at="2017-11-05T21:31:15Z">
           <reporter-output>
             <line>
               <![CDATA[<div "featureFile">Feature File: src&#x2F;test&#x2F;resources&#x2F;features&#x2F;CommercialRealEstate.feature</div>]]>
             </line>
             <line>
-              <![CDATA[<div "feature">Feature: navigate and verify all the pages have been successfully loaded.</div>]]>
+              <![CDATA[<div "feature">Feature: Click on CommercialRealEstate tabs and verify all the pages have been successfully loaded.</div>]]>
             </line>
             <line>
               <![CDATA[<div "scenario">Scenario: Property, Business for Sale, Franchise Page verification</div>]]>
             </line>
             <line>
-              <![CDATA[<div "result">Given  I am on Commericial Real Estate Home page using browser (passed : 7s)</div>]]>
+              <![CDATA[<div "result">Given  I am on Commercial Real Estate Home page (passed : 7s)</div>]]>
             </line>
             <line>
-              <![CDATA[<div "result">Then  Verify Property Page successfully loaded (passed : 6s)</div>]]>
+              <![CDATA[<div "result">Then  Verify Property Page successfully loaded (passed : 5s)</div>]]>
             </line>
             <line>
-              <![CDATA[<div "result">Then  Verify BusinessForSale Page successfully loaded (passed : 6s)</div>]]>
+              <![CDATA[<div "result">Then  Verify BusinessForSale Page successfully loaded (passed : 3s)</div>]]>
             </line>
             <line>
-              <![CDATA[<div "result">Then  Verify Franchise Page successfully loaded (passed : 4s)</div>]]>
+              <![CDATA[<div "result">Then  Verify Franchise Page successfully loaded (passed : 2s)</div>]]>
+            </line>
+            <line>
+              <![CDATA[<div "result">Then  Verify News Page successfully loaded (passed : 12s)</div>]]>
             </line>
           </reporter-output>
         </test-method> <!-- run_cukes -->

@@ -2,9 +2,13 @@ package framework;
 
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by P737084 on 31/05/2017.
- */
+/*
+* Filename      	         Created By       Date
+* ParentPage.java            Shruthi          05/11/2017
+*
+*Java class inheriting methods and variables from DSL class
+*/
+
 public class ParentPage extends DSL {
     public ParentPage(WebDriver driver) {
         super(driver);
